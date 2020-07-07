@@ -1,7 +1,11 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'projects/style.css' %}">
+
 {% if project_list %}
     <ul>
     {% for project in project_list %}
-        <li><a href="{% url 'detail' project.id %}">{{ project.text }}</a></li>
+        <li><a href="{% url 'projects:detail' project.id %}">{{ project.title }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

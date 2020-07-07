@@ -1,6 +1,5 @@
-<h1>{{ project.text }}</h1>
-<ul> klasdjalksjd
-<!-- {% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }}</li> -->
-<!-- {% endfor %} -->
-</ul>
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'projects/style.css' %}">
+<h1>{{ project.title }}</h1>
+<p>{{project.text}}</p>
