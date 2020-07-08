@@ -31,17 +31,25 @@ class GoLmodel{
         this.se = 1
 
 
-        this.sp = 30//speed in ms
+        this.sp = 45//speed in ms
         this.weightRegex = /^[nsewchiprg]{2}\d+/
         this.ruleRegex = /^[bs]\d+/
 
         //wanted to keep rules in some txt or json file, but its an ordeal so its all kept here instead
         this.stringRules = new Map()
-
         //init functions
         this.fillWithRules()
+        this.ruleNames = Array.from(this.stringRules.keys())
+        this.ruleCurIndex = 0
         this.setRandRule()
         // this.readGoLargs(this.stringRules.get(''))
+        this.fillRandom()
+    }
+
+    nextRule(){
+        this.ruleCurIndex += 1
+        this.ruleCurIndex %= this.ruleNames.length
+        this.readGoLargs(this.stringRules.get(this.ruleNames[this.ruleCurIndex]))
         this.fillRandom()
     }
 
