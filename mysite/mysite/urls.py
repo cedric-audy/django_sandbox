@@ -19,7 +19,6 @@ from django.views.generic.base import TemplateView
 from django.conf.urls import url
 
 urlpatterns = [
-    path('projects/', include('projects.urls')),
-    path('admin/', admin.site.urls)
+   path('', views.index, name='index'),
 ]
 
