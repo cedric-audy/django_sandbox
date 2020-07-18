@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.views.generic.simple import direct_to_template
 
 urlpatterns = [
-    path('index.html', include('projects.urls')),
     path('projects/', include('projects.urls')),
     path('admin/', admin.site.urls)
 ]
+
+urlpatterns += patterns("",
+    (r"^$", direct_to_template, {"template": "index.html"})
+)
