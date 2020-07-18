@@ -20,8 +20,6 @@ from django.conf.urls import url
 
 urlpatterns = [
     path('projects/', include('projects.urls')),
-    path('admin/', admin.site.urls),
-    url(r'^$', TemplateView.as_view(template_name='static/index.html'),
-        name='home'),
+    path('admin/', admin.site.urls)
 ]
 
