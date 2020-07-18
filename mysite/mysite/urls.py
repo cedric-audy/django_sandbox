@@ -15,13 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from django.views.generic.simple import direct_to_template
+from django.views.generic.base import TemplateView
 
 urlpatterns = [
     path('projects/', include('projects.urls')),
-    path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
+    url(r'^$', TemplateView.as_view(template_name='static/index.html'),
+        name='home'),
 ]
 
-urlpatterns += patterns("",
-    (r"^$", direct_to_template, {"template": "index.html"})
-)
