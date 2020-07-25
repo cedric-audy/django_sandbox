@@ -1,1 +1,1 @@
-practice for django
+practice for django, includes the apache2 config file so that the django website is served using both. Currently running on my Raspberry Pi 4 4gb, with remote connection from remote.it and local access.
